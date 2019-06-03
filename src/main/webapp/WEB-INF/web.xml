@@ -1,0 +1,33 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0" metadata-complete="true">
+
+	<listener>
+		<listener-class>org.jacob.web.common.ContextListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>basePackage</param-name>
+		<param-value>org.jacob.book.chap11</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>simpleDispatcher</servlet-name>
+		<servlet-class>org.jacob.web.common.SimpleDispatcherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>simpleDispatcher</servlet-name>
+		<url-pattern>/app/*</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<location>/e/error.jsp</location>
+	</error-page>
+
+	<welcome-file-list>
+		<welcome-file>app/main</welcome-file>
+	</welcome-file-list>
+</web-app>
